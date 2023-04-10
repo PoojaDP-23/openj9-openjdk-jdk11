@@ -179,11 +179,11 @@ public class KeepAliveCache
         } else {
              oldClient = v.put(http);
         }
-    }
-    // close after releasing locks
+        // close after releasing locks
         if (oldClient != null) {
             oldClient.closeServer();
         }
+    }
 
     // returns the keep alive set by user in system property or -1 if not set
     private static int getUserKeepAlive(boolean isProxy) {
